@@ -29,7 +29,7 @@ display_controls() {
     echo "  Navigate with up-down-left-right"
     echo "  Select app with A/B/SPACE and execute with Start/X/Y/ENTER"
     echo
-    sleep 4  # Delay for 5 seconds
+    sleep 4  # Adjusted the comment to match the actual delay
 }
 
 # Main script execution
@@ -37,14 +37,13 @@ clear
 animate_title
 display_controls
 
-
 # Define the options
-OPTIONS=("1" "Arch Container (Steam, Lutris, Heroic and more apps"
-         "2" "Individual non-container Apps for Batocera"
+OPTIONS=("1" "Arch Container (Steam, Lutris, Heroic and more apps)" \
+         "2" "Individual non-container Apps for Batocera")
 
 # Display the dialog and get the user choice
-CHOICE=$(dialog --clear --backtitle Main Menu" \
-                --title "Main Mnu" \
+CHOICE=$(dialog --clear --backtitle "Main Menu" \
+                --title "Main Menu" \
                 --menu "Choose an option:" 20 75 3 \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
@@ -69,7 +68,6 @@ case $CHOICE in
         chmod 777 /tmp/runner 2>/dev/null
         bash /tmp/runner
         ;;
-
     *)
         echo "No valid option selected or cancelled. Exiting."
         ;;
