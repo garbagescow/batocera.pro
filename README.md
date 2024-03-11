@@ -23,6 +23,7 @@ container containing Steam/Lutris/Heroic and other apps<br>
 DOWNLOAD THE INSTALLER APP IN SSH/XTERM:<br>
 
   ```curl -L https://github.com/garbagescow/batocera.pro/raw/main/app/install.sh | bash```
+
 AND RUN IT FROM PORTS<br>
 <br>
 <img src="https://github.com/garbagescow/batocera.pro/raw/main/app/pro.PNG" style="width:62%;height:auto;"/>
@@ -31,6 +32,6 @@ AND RUN IT FROM PORTS<br>
 <br>
 <br>
 <br>
-<i>This is repository in no way <br>
-shape or form affiliated with Batocera. No Support will be provided. </i><br>
+<i>This is a personal repository in no way <br>
+shape or form affiliated with Batocera. No Support will be provided.  Go use the official one if you want help. </i><br>
 
