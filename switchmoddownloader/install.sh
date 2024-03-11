@@ -23,7 +23,9 @@ mkdir -p "$LAUNCHER_DIR"
 
 cat > "$LAUNCHER_FILE" <<EOF
 #!/bin/bash
+unclutter-remote -s
 DISPLAY=:0.0 "$INSTALL_DIR/SwitchEmuModDownloader"
+unclutter-remote -h
 EOF
 
 # Make launcher script executable
@@ -31,5 +33,6 @@ chmod +x "$LAUNCHER_FILE"
 
 # Cleanup
 rm -rf "$TEMP_DIR"
+curl http://127.0.0.1:1234/reloadgames
 
 echo "Installation and setup complete."
