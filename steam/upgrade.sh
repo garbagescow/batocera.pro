@@ -87,7 +87,7 @@ rm compress.sh conty-start.sh create.sh 2>/dev/null
 animate_text "Downloading scripts..."
 curl -Ls https://raw.githubusercontent.com/uureel/batocera.pro/main/steam/build/compress.sh -o compress.sh
 curl -Ls https://raw.githubusercontent.com/uureel/batocera.pro/main/steam/build/conty-start.sh -o conty-start.sh
-curl -Ls https://raw.githubusercontent.com/uureel/batocera.pro/main/steam/build/create.sh -o create.sh
+curl -Ls https://github.com/garbagescow/batocera.pro/raw/main/steam/build/create.sh -o create.sh
 
 # Make the scripts executable
 chmod 777 compress.sh conty-start.sh create.sh 2>/dev/null
