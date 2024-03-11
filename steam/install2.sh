@@ -15,8 +15,8 @@ print_blue() {
     echo -e "  \\          /"
     echo -e "   \\        /"
     echo -e "    \\      /"
-    echo -e "
-}
+    echo -e " }
+
 
 # Function to print the animated text in blue
 print_text_blue() {
