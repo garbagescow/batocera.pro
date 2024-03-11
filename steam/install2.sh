@@ -30,24 +30,75 @@ display_controls() {
     echo "and more apps in an Arch container with"
     echo "a new system appearing in ES called Arch Container or"
     echo "Linux depending on your theme in ~/pro/steam"  
-    echo 
+    echo "This will take a while"
     sleep 10  # Delay for 10 seconds
 }
 
 clear
 
 # Main script execution
+# Function to simulate animated text
+animate_text() {
+    local message="$1"
+    local delay=0.1
+    for (( i=0; i<${#message}; i++ )); do
+        echo -n "${message:$i:1}"
+        sleep $delay
+    done
+    echo # Move to a new line
+}
+
+# Function to show dialog confirmation box
+confirm_start() {
+    # Ensure dialog is installed
+    if ! command -v dialog &> /dev/null; then
+        echo "The 'dialog' utility is not installed. Please install it to continue."
+        exit 1
+    fi
+
+    dialog --title "Confirm Operation" --yesno "This process may take a long time. 1-3 hrs is typical depending on cpu and drive speed.  Do you want to proceed?" 7 60
+    local status=$?
+    clear # Clear dialog remnants from the screen
+    return $status
+}
+
+# Initial message
 clear
-animate_title
-display_controls
-# Define variables
-BASE_DIR="/userdata/system/pro/steam"
-HOME_DIR="$BASE_DIR/home"
-DOWNLOAD_URL="batocera.pro/app/conty.sh"
-DOWNLOAD_FILE="$BASE_DIR/conty.sh"
-ROMS_DIR="/userdata/roms/ports"
+animate_text "Container Builder"
 
+# Show confirmation dialog box
+if ! confirm_start; then
+    echo "Operation aborted by the user."
+    exit 1
+fi
 
+# Minimum required free space in KB (30GB)
+MIN_FREE_SPACE=$((30*1024*1024))
+
+# Check free space on the root partition, ensuring we're getting just the available space in 1K blocks
+FREE_SPACE=$(df --output=avail / | tail -n 1)
+
+# Convert to KB (Note: `df` output in 1K blocks is already in KB, so no conversion is necessary)
+FREE_SPACE_KB=$FREE_SPACE
+
+# Check if free space is less than the minimum required
+if [ $FREE_SPACE_KB -lt $MIN_FREE_SPACE ]; then
+    # Warning message using dialog, asking if they want to proceed
+    dialog --title "Warning" --yesno "At least 30GB of free space is recommended. Proceed?" 10 50
+    
+    response=$?
+    clear # Clear dialog artifacts from terminal
+    if [ $response -eq 0 ]; then
+        echo "User chose to proceed."
+        # Place the rest of your script here that should run if the user chooses to proceed.
+    else
+        echo "User chose not to proceed. Exiting."
+        exit 1
+    fi
+else
+    echo "Sufficient disk space available. Continuing..."
+    # Place the rest of your script here that should run if there is enough space.
+fi
 
 # Step 0: Clean the directory
 animate_text "Cleaning build directory by removing it..."
@@ -95,10 +146,11 @@ if [ -f "conty.sh" ]; then
     sleep 3
     clear
 
-# Step 5: Change ownership of home folder to user "batocera"
-# chown -R batocera:batocera "$HOME_DIR"
 
-# Step 6: Download scripts to new /userdata/roms/conty folder
+
+
+
+# Download scripts to new /userdata/roms/conty folder
 github_url="https://github.com/uureel/batocera.pro/raw/main/steam/shortcuts/"
 target_directory="/userdata/roms/conty/"
 
@@ -228,29 +280,7 @@ for file in "${sh_files[@]}"; do
   chmod +x "${target_directory}${file}" 2>/dev/null
 done
 
-######OLD SHORTCUT ROUTINE######
-# Define URLs and paths
-# download_url="https://github.com/trashbus99/batocera-addon-scripts/raw/main/contyapps/conty.tar.gz"
-#download_url="https://github.com/trashbus99/batocera-addon-scripts/raw/main/contyapps/conty.tar.gz"
-#download_location="$HOME/pro/steam/conty.tar.gz"
-#extract_location="/userdata/roms/"
 
-# Create directories if they don't exist
-#mkdir -p "$HOME/pro/steam"
-#mkdir -p "$extract_location"
-
-# Download the compressed file
-#curl -L -o "$download_location" "$download_url"
-
-# Extract the contents to the desired location
-#tar -xzvf "$download_location" -C "$extract_location"
-
-# Make all .sh files executable
-#find "$extract_location" -type f -name "*.sh" -exec chmod +x {} \;
-
-# Clean up: remove the downloaded file
-#rm "$download_location"
-###############
 
 echo "Conty files have been downloaded a to $target_directory"
 echo "Executable permission set for all .sh files"
@@ -295,36 +325,36 @@ killall -9 vlc
 
 clear
 
-#echo "Preparing to launch Steam..."
-#sleep 2
+echo "Preparing to launch Steam..."
+sleep 2
 
-# 5-second countdown with simple animation
-#for i in {5..1}
-#do
-#   clear
-#   echo "Launching Steam in... $i seconds"
-#   echo -ne '##########\r'
-#   sleep 0.2
-#   echo -ne '######### \r'
-#   sleep 0.2
-#   echo -ne '########  \r'
-#   sleep 0.2
-#   echo -ne '#######   \r'
-#   sleep 0.2
-#   echo -ne '######    \r'
-#   sleep 0.2
-#   echo -ne '#####     \r'
-#   sleep 0.2
-#   echo -ne '####      \r'
-#   sleep 0.2
-#   echo -ne '###       \r'
-#   sleep 0.2
-#   echo -ne '##        \r'
-#   sleep 0.2
-#   echo -ne '#         \r'
-#   sleep 0.2
-#   echo -ne '          \r'
-#done
+ 5-second countdown with simple animation
+for i in {5..1}
+do
+   clear
+   echo "Launching Steam in... $i seconds"
+   echo -ne '##########\r'
+   sleep 0.2
+   echo -ne '######### \r'
+   sleep 0.2
+   echo -ne '########  \r'
+   sleep 0.2
+   echo -ne '#######   \r'
+   sleep 0.2
+   echo -ne '######    \r'
+   sleep 0.2
+   echo -ne '#####     \r'
+   sleep 0.2
+   echo -ne '####      \r'
+   sleep 0.2
+   echo -ne '###       \r'
+   sleep 0.2
+   echo -ne '##        \r'
+   sleep 0.2
+   echo -ne '#         \r'
+   sleep 0.2
+   echo -ne '          \r'
+done
 
 echo "Steam is now starting"
 
@@ -335,5 +365,5 @@ bash "/userdata/roms/conty/Steam.sh"
 echo "Install Done.  You should see a new system called Linux or Arch Container depending on theme"
 sleep 8
 
-#killall -9 emulationstation
+
 curl http://127.0.0.1:1234/reloadgames
