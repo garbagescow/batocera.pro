@@ -1,4 +1,4 @@
-# Forked from batocera.pro
+# Forked from UUREEL'S batocera.pro repository
 <Forked from Uureel...my pesonal mods>
 <b><i>Unofficial apps for Batocera </i></b><br>
 <br>
