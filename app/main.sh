@@ -11,7 +11,7 @@ fi
 
 # Function to display animated title
 animate_title() {
-    local text="BATOCERA PRO APP INSTALLER"
+    local text="GarbageScow BATOCERA PRO APP INSTALLER/MANAGER"
     local delay=0.03
     local length=${#text}
 
@@ -61,7 +61,7 @@ case $CHOICE in
         bash /tmp/runner
         ;;
     2)
-        echo "Loading Uninstall script..."
+        echo "Loading App Menu..."
         rm /tmp/runner 2>/dev/null
         wget -q --tries=30 --no-check-certificate --no-cache --no-cookies -O /tmp/runner https://github.com/garbagescow/batocera.pro/raw/main/app/pro.sh
         dos2unix /tmp/runner 2>/dev/null 
