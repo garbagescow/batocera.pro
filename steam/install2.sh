@@ -26,7 +26,7 @@ print_blue() {
     echo -e "   /   ,,   \\"
     echo -e "  /   |  |  -\\"
     echo -e " /_-''    ''-_\\${NC}"
-    echo -e "${BLUE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK!${NC}"
+    echo -e "${BLUE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK and UUREEL!${NC}"
 }
 
 # Function to print the ASCII logo and the text in white
