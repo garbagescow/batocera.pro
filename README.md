@@ -33,5 +33,5 @@ AND RUN IT FROM PORTS<br>
 <br>
 <br>
 <i>This is a personal repository in no way <br>
-shape or form affiliated with Batocera. No Support will be provided.  Go use the official one if you want help. </i><br>
+shape or form affiliated with Batocera. No Support will be provided. </i><br>
 
