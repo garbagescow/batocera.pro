@@ -29,6 +29,6 @@ AND RUN IT FROM PORTS<br>
 <br>
 <br>
 <br>
-<i>This is a small hobby repository in no way <br>
+<i>This is repository in no way <br>
 shape or form affiliated with Batocera. No Support will be provided. </i><br>
 
