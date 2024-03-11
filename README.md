@@ -20,7 +20,7 @@ container containing Steam/Lutris/Heroic and other apps<br>
 <br>
 <br>
 <b><i>&nbsp;HOW TO INSTALL : </font></b></i><br>
-DOWNLOAD THE INSTALLER APP IN SSH/XTERM: curl -L https://github.com/garbagescow/batocera.pro/raw/main/app/install.sh
+DOWNLOAD THE INSTALLER APP IN SSH/XTERM: ```curl -L https://github.com/garbagescow/batocera.pro/raw/main/app/install.sh | bash```
 AND RUN IT FROM PORTS<br>
 <br>
 <img src="https://github.com/uureel/batocera.pro/raw/main/app/pro.PNG" style="width:62%;height:auto;"/>
