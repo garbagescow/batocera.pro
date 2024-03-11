@@ -19,7 +19,8 @@ NC="\033[0m" # No Color
 
 # Function to print the ASCII logo and the text in blue
 print_blue() {
-    echo -e "${BLUE}       /\\"
+    echo -e "${BLUE}     
+    echo -e "       /\\"
     echo -e "      /  \\"
     echo -e "     /\\   \\"
     echo -e "    /      \\"
@@ -31,7 +32,8 @@ print_blue() {
 
 # Function to print the ASCII logo and the text in white
 print_white() {
-    echo -e "${WHITE}       /\\"
+    echo -e "${WHITE}
+    echo -e "       /\\"
     echo -e "      /  \\"
     echo -e "     /\\   \\"
     echo -e "    /      \\"
