@@ -9,6 +9,35 @@ if [ "$architecture" != "x86_64" ]; then
     exit 1
 fi
 
+# Function to display animated title
+animate_title() {
+    local text="BATOCERA PRO APP INSTALLER"
+    local delay=0.03
+    local length=${#text}
+
+    for (( i=0; i<length; i++ )); do
+        echo -n "${text:i:1}"
+        sleep $delay
+    done
+    echo
+}
+
+# Function to display controls
+display_controls() {
+    echo
+    echo "Controls:"
+    echo "  Navigate with up-down-left-right"
+    echo "  Select app with A/B/SPACE and execute with Start/X/Y/ENTER"
+    echo
+    sleep 4  # Delay for 5 seconds
+}
+
+# Main script execution
+clear
+animate_title
+display_controls
+
+
 # Define the options
 OPTIONS=("1" "Arch Container (Steam, Lutris, Heroic and more apps"
          "2" "Individual non-container Apps for Batocera"
