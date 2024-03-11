@@ -337,9 +337,9 @@ clear
 
 echo "Steam is now starting"
 
-dos2unix "/userdata/roms/conty/Steam Big Picture Mode.sh" 2>/dev/null
-chmod 777 "/userdata/roms/conty/Steam Big Picture Mode.sh" 2>/dev/null
-bash "/userdata/roms/conty/Steam Big Picture Mode.sh"
+dos2unix "/userdata/roms/conty/Steam.sh" 2>/dev/null
+chmod 777 "/userdata/roms/conty/Steam.sh" 2>/dev/null
+bash "/userdata/roms/conty/Steam.sh"
 
 echo "Install Done.  You should see a new system called Linux or Arch Container depending on theme"
 sleep 8
