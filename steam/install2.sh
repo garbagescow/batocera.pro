@@ -38,7 +38,7 @@ print_white() {
     echo -e "   /   ,,   \\"
     echo -e "  /   |  |  -\\"
     echo -e " /_-''    ''-_\\${NC}"
-    echo -e "${WHITE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK!${NC}"
+    echo -e "${WHITE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK and UUREEL!${NC}"
 }
 
 # Clear the screen
