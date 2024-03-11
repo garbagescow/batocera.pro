@@ -12,47 +12,53 @@ fi
 clear 
 
 
+
 # Define colors
 BLUE="\033[1;34m"
 WHITE="\033[1;37m"
 NC="\033[0m" # No Color
 
-# Function to print the ASCII logo and the text in blue
-print_blue() {
-    echo -e "${BLUE}       /\\"
-    echo -e "      /  \\"
-    echo -e "     /\\   \\"
-    echo -e "    /      \\"
-    echo -e "   /   ,,   \\"
-    echo -e "  /   |  |  -\\"
-    echo -e " /_-''    ''-_\\${NC}"
-    echo -e "${BLUE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK and UUREEL!${NC}"
+# Print the Arch logo in blue
+print_logo() {
+    echo -e "${BLUE}        /\\"
+    echo -e "       /  \\"
+    echo -e "      /\\   \\"
+    echo -e "     /      \\"
+    echo -e "    /________\\"
+    echo -e "   /\\________/\\"
+    echo -e "  /  \\      /  \\"
+    echo -e " /    \\    /    \\"
+    echo -e "/_/\\  /\\  /\\_/\\  \\"
+    echo -e "\\ \\/  \\/  \\/  \\/ /"
+    echo -e " \\             /"
+    echo -e "  \\/___________/ ${NC}"
 }
 
-# Function to print the ASCII logo and the text in white
-print_white() {
-    echo -e "${WHITE}       /\\"
-    echo -e "      /  \\"
-    echo -e "     /\\   \\"
-    echo -e "    /      \\"
-    echo -e "   /   ,,   \\"
-    echo -e "  /   |  |  -\\"
-    echo -e " /_-''    ''-_\\${NC}"
-    echo -e "${WHITE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK and UUREEL!${NC}"
+# Function to print the animated text in blue
+print_text_blue() {
+    echo -e "${BLUE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK!${NC}"
+}
+
+# Function to print the animated text in white
+print_text_white() {
+    echo -e "${WHITE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO UUREEL!${NC}"
 }
 
 # Clear the screen
 clear
 
 # Animation loop
-for i in {1..10}; do
-    print_blue
+while true; do
+    print_logo
+    print_text_blue
     sleep 0.5 # wait for 0.5 seconds
     clear
-    print_white
+    print_logo
+    print_text_white
     sleep 0.5 # wait for 0.5 seconds
     clear
 done
+
 
 # Function to display animated title
 animate_title() {
