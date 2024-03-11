@@ -33,7 +33,7 @@ display_controls
 declare -A apps
 apps=(
     # ... (populate with your apps as shown before)
-    ["ARCH-CONTAINER"]="curl -Ls steam.batocera.pro | bash"
+    ["ARCH-CONTAINER"]="curl -Ls https://github.com/garbagescow/batocera.pro/raw/main/steam/steam.sh | bash"
     ["7ZIP"]="curl -Ls 7zip.batocera.pro | bash"
     ["86BOX"]="curl -Ls 86box.batocera.pro | bash"
     ["ALTUS"]="curl -Ls altus.batocera.pro | bash"
@@ -67,7 +67,7 @@ apps=(
     ["GTHUMB"]="curl -Ls gthumb.batocera.pro | bash"
     ["HARD-INFO"]="curl -Ls hardinfo.batocera.pro | bash"
     ["HEROIC-LAUNCHER/APPIMAGE"]="curl -Ls heroic.batocera.pro | bash"
-    ["HEROIC-LAUNCHER/CONTAINER"]="curl -Ls heroic2.batocera.pro | bash"
+    ["HEROIC-LAUNCHER/CONTAINER"]="curl -Ls https://github.com/garbagescow/batocera.pro/raw/main/steam/steam.sh | bash"
     ["HYPER"]="curl -Ls hyper.batocera.pro | bash"
     ["ITCH"]="curl -Ls itch.batocera.pro | bash"
     ["JAVA-RUNTIME"]="curl -Ls java.batocera.pro | bash"
@@ -77,7 +77,7 @@ apps=(
     ["LIVECAPTIONS/SERVICE"]="curl -Ls livecaptions.batocera.pro | bash"
     ["LOGS"]="curl -Ls logs.batocera.pro | bash"
     ["LUDUSAVI"]="curl -Ls ludusavi.batocera.pro | bash"
-    ["LUTRIS/CONTAINER"]="curl -Ls lutris.batocera.pro | bash"
+    ["LUTRIS/CONTAINER"]="curl -Ls https://github.com/garbagescow/batocera.pro/raw/main/steam/steam.sh | bash"
     ["MEDIAELCH"]="curl -Ls mediaelch.batocera.pro | bash"
     ["MINECRAFT-BEDROCK-EDITION"]="curL -Ls https://raw.githubusercontent.com/uureel/batocera.pro/main/bedrock/bedrock.sh"
     ["MINECRAFT-JAVA-EDITION"]="curl -Ls minecraft.batocera.pro | bash"
@@ -108,7 +108,7 @@ apps=(
     ["SAYONARA"]="curl -Ls sayonara.batocera.pro | bash"
     ["SMPLAYER"]="curl -Ls smplayer.batocera.pro | bash"
     ["SPOTIFY"]="curl -Ls spotify.batocera.pro | bash"
-    ["STEAM/CONTAINER"]="curl -Ls steam.batocera.pro | bash"
+    ["STEAM/CONTAINER"]="curl -Ls https://github.com/garbagescow/batocera.pro/raw/main/steam/steam.sh | bash"
     ["STRAWBERRY"]="curl -Ls strawberry.batocera.pro | bash"
     ["SUBLIME-TEXT"]="curl -Ls sublime.batocera.pro | bash"
     ["SUNSHINE"]="curl -Ls sunshine.batocera.pro | bash"
