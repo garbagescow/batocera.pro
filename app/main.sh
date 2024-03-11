@@ -11,7 +11,7 @@ fi
 
 # Define the options
 OPTIONS=("1" "Arch Container (Steam, Lutris, Heroic and more apps"
-         "2" "Individual Apps"
+         "2" "Individual non-container Apps for Batocera"
 
 # Display the dialog and get the user choice
 CHOICE=$(dialog --clear --backtitle Main Menu" \
