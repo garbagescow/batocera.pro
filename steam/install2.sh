@@ -1,8 +1,21 @@
 #!/bin/bash
 
+# Get the machine hardware name
+architecture=$(uname -m)
+
+# Check if the architecture is x86_64 (AMD/Intel)
+if [ "$architecture" != "x86_64" ]; then
+    echo "This script only runs on AMD or Intel (x86_64) CPUs, not on $architecture."
+    exit 1
+fi
+
+clear 
+
+
 # Define colors
-BLUE="\e[34m"
-NC="\e[0m" # No Color
+BLUE="\033[1;34m"
+WHITE="\033[1;37m"
+NC="\033[0m" # No Color
 
 # Function to print the ASCII logo and the text in blue
 print_blue() {
@@ -10,44 +23,44 @@ print_blue() {
     echo -e "      /  \\"
     echo -e "     /\\   \\"
     echo -e "    /      \\"
-    echo -e "   /        \\"
-    echo -e "  /__________\\"
-    echo -e "  \\          /"
-    echo -e "   \\        /"
-    echo -e "    \\      /"
-    echo -e " }
-
-
-# Function to print the animated text in blue
-print_text_blue() {
-    echo -e "${BLUE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK!${NC}"
+    echo -e "   /   ,,   \\"
+    echo -e "  /   |  |  -\\"
+    echo -e " /_-''    ''-_\\${NC}"
+    echo -e "${BLUE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO KRON4EK${NC}"
 }
 
-# Function to print the animated text in white
-print_text_white() {
-    echo -e "${WHITE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO UUREEL!${NC}"
+# Function to print the ASCII logo and the text in white
+print_white() {
+    echo -e "${WHITE}       /\\"
+    echo -e "      /  \\"
+    echo -e "     /\\   \\"
+    echo -e "    /      \\"
+    echo -e "   /   ,,   \\"
+    echo -e "  /   |  |  -\\"
+    echo -e " /_-''    ''-_\\${NC}"
+    echo -e "${WHITE}ARCH LINUX CONTAINER INSTALLER.\nTHANKS TO UUREEL${NC}"
 }
 
 # Clear the screen
 clear
 
 # Animation loop
-while true; do
-    print_logo
-    print_text_blue
+for i in {1..10}; do
+    print_blue
     sleep 0.5 # wait for 0.5 seconds
     clear
-    print_logo
-    print_text_white
+    print_white
     sleep 0.5 # wait for 0.5 seconds
     clear
 done
+
 
 # Function to display animated title
 animate_title() {
     local text="Arch container installer"
     local delay=0.1
     local length=${#text}
+
     for (( i=0; i<length; i++ )); do
         echo -n "${text:i:1}"
         sleep $delay
