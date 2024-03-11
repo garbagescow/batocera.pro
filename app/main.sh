@@ -64,7 +64,7 @@ OPTIONS=("1" "Arch Container (Steam, Lutris, Heroic and more apps)" \
 # Display the dialog and get the user choice
 CHOICE=$(dialog --clear --backtitle "Main Menu" \
                 --title "Main Menu" \
-                --menu "Choose an option:" 20 75 3 \
+                --menu "Choose an option:" 20 25 3 \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
 
