@@ -1,24 +1,21 @@
 #!/bin/bash
 
 # Define colors
-BLUE="\033[1;34m"
-WHITE="\033[1;37m"
-NC="\033[0m" # No Color
+BLUE="\e[34m"
+NC="\e[0m" # No Color
 
-# Print the Arch logo in blue
-print_logo() {
-    echo -e "${BLUE}        /\\"
-    echo -e "       /  \\"
-    echo -e "      /\\   \\"
-    echo -e "     /      \\"
-    echo -e "    /________\\"
-    echo -e "   /\\________/\\"
-    echo -e "  /  \\      /  \\"
-    echo -e " /    \\    /    \\"
-    echo -e "/_/\\  /\\  /\\_/\\  \\"
-    echo -e "\\ \\/  \\/  \\/  \\/ /"
-    echo -e " \\             /"
-    echo -e "  \\/___________/ ${NC}"
+# Function to print the ASCII logo and the text in blue
+print_blue() {
+    echo -e "${BLUE}       /\\"
+    echo -e "      /  \\"
+    echo -e "     /\\   \\"
+    echo -e "    /      \\"
+    echo -e "   /        \\"
+    echo -e "  /__________\\"
+    echo -e "  \\          /"
+    echo -e "   \\        /"
+    echo -e "    \\      /"
+    echo -e "
 }
 
 # Function to print the animated text in blue
