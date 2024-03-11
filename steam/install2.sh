@@ -58,27 +58,51 @@ ROMS_DIR="/userdata/roms/ports"
 
 
 
-# Step 1: Create base folder if not exists
-mkdir -p "$BASE_DIR"
-if [ ! -d "$BASE_DIR" ]; then
-  # Handle error or exit if necessary
-  echo "Error creating BASE_DIR."
-  exit 1
+# Step 0: Clean the directory
+animate_text "Cleaning build directory by removing it..."
+rm -rf ~/pro/steam/build
+
+# Verify the directory doesn't exist
+if [ -d "~/pro/steam/build" ]; then
+    echo "The directory still exists. Please reboot your system and try again."
+    exit 1
+else
+    animate_text "..."
 fi
 
-# Step 2: Create home folder if not exists
-if [ ! -d "$HOME_DIR" ]; then
-  mkdir -p "$HOME_DIR"
-fi
-   
-# Step 3: Download conty.sh with download percentage indicator
-rm /userdata/system/pro/steam/prepare.sh 2>/dev/null
-rm /userdata/system/pro/steam/conty.s* 2>/dev/null
-wget -q --show-progress --tries=30 --no-check-certificate --no-cache --no-cookies -O /userdata/system/pro/steam/conty.sh http://batocera.pro/app/conty.sh
-chmod 777 /userdata/system/pro/steam/conty.sh 2>/dev/null
+# Recreate the target directory
+mkdir -p ~/pro/steam/build
+animate_text "Recreated the build directory."
 
-# Step 4: Make conty.sh executable
-chmod +x "$DOWNLOAD_FILE"
+# Navigate to the directory
+cd ~/pro/steam/build
+rm compress.sh conty-start.sh create.sh 2>/dev/null
+
+# Download the scripts using curl
+animate_text "Downloading scripts..."
+curl -Ls https://raw.githubusercontent.com/uureel/batocera.pro/main/steam/build/compress.sh -o compress.sh
+curl -Ls https://raw.githubusercontent.com/uureel/batocera.pro/main/steam/build/conty-start.sh -o conty-start.sh
+curl -Ls https://github.com/garbagescow/batocera.pro/raw/main/steam/build/create.sh -o create.sh
+
+# Make the scripts executable
+chmod 777 compress.sh conty-start.sh create.sh 2>/dev/null
+
+# Run scripts with animated messages
+animate_text "Running create.sh..."
+bash ./create.sh
+
+animate_text "Running compress.sh..."
+bash ./compress.sh
+
+# Check if conty.sh is successfully created and make it executable
+if [ -f "conty.sh" ]; then
+    chmod +x conty.sh
+    # Move conty.sh to ~/pro/steam
+    animate_text "moving: please wait"
+    mv conty.sh /userdata/system/pro/steam/
+    animate_text "conty.sh creation and move successful!"
+    sleep 3
+    clear
 
 # Step 5: Change ownership of home folder to user "batocera"
 # chown -R batocera:batocera "$HOME_DIR"
