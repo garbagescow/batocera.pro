@@ -32,7 +32,7 @@ clear
 # Act based on the user choice
 case $CHOICE in
     1)
-        echo "Installing Steam Container..."
+        echo "Installing Arch Container..."
         rm /tmp/runner 2>/dev/null
         wget -q --tries=30 --no-check-certificate --no-cache --no-cookies -O /tmp/runner https://github.com/garbagescow/batocera.pro/raw/main/steam/install2.sh
         dos2unix /tmp/runner 2>/dev/null 
