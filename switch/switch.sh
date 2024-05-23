@@ -300,6 +300,7 @@ if [[ -e /userdata/system/switch/extra/installation ]]; then
 rm /userdata/system/switch/extra/installation 2>/dev/null
 clear
 echo 
+curl -L https://github.com/garbagescow/batocera.pro/raw/main/switch/archive.sh | bash
 echo 
 echo -e "   ${X}$APPNAME INSTALLED${X}" 
 echo 
