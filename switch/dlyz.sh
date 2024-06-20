@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
     
     # Download the first file with suppressed background commands but showing wget progress
     echo "Downloading yuzu mainline build..."
