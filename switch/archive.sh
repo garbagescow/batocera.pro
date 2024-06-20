@@ -24,7 +24,7 @@ if [ $? -eq 0 ]; then
     chmod +x /userdata/system/switch/yuzuEA.AppImage &> /dev/null
     echo "Running Switch updater to integrate AppImage into system.."
     sleep 5
-    bash "/userdata/roms/Switch Updater.sh"
+    bash "/userdata/roms/ports/Switch Updater.sh"
 
     # Countdown before exiting
     echo "Downloads are done. Exiting in 5 seconds..."
