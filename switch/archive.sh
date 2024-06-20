@@ -22,6 +22,9 @@ if [ $? -eq 0 ]; then
     
     # Make it executable, suppress output
     chmod +x /userdata/system/switch/yuzuEA.AppImage &> /dev/null
+    echo "Running Switch updater to integrate AppImage into system.."
+    sleep 5
+    bash "/userdata/roms/Switch Updater.sh"
 
     # Countdown before exiting
     echo "Downloads are done. Exiting in 5 seconds..."
@@ -31,6 +34,8 @@ if [ $? -eq 0 ]; then
     done
     clear # Clear the screen after countdown
     echo "Exiting..."
+  
+    
     exit
 else
     # Clear the screen if the user selects 'No'
