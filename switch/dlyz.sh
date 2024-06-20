@@ -4,6 +4,9 @@
     
     # Download the first file with suppressed background commands but showing wget progress
     echo "Downloading yuzu mainline build..."
+    echo ""
+    echo ""
+    sleep 2
     wget --tries=10 --show-progress -O /userdata/system/switch/yuzu.AppImage "https://archive.org/download/yuzu-windows-msvc-20240304-537296095_20240305_1340/Linux/yuzu-mainline-20240304-537296095.AppImage"
     
     # Make it executable, suppress output
@@ -11,6 +14,9 @@
 
     # Download the second file with suppressed background commands but showing wget progress
     echo "Downloading yuzu EA build..."
+    echo""
+    echo ""
+    sleep 2
     wget --tries=10 --show-progress -O /userdata/system/switch/yuzuEA.AppImage "https://archive.org/download/yuzu-windows-msvc-20240304-537296095_20240305_1340/Linux/Linux-Yuzu-EA-4176.AppImage" 
     
     # Make it executable, suppress output
